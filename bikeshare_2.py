@@ -169,6 +169,7 @@ def user_stats(df):
         print("\n Gender Types: \n No Data available!")
 
     # Display earliest, most recent, and most common year of birth
+    # try and except to cover NAN´s
     try:
         earliest_year_of_birth = df['Birth Year'].min()
         print("\n The earliest year of birth is:", int(earliest_year_of_birth))
