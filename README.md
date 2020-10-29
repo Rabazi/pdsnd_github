@@ -12,7 +12,8 @@ Using python to explore data from bike share systems. The script uses input from
 
 ### Files used
 
-bikeshare_2.py
+bikeshare_2.py;
+
 Data Files: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
