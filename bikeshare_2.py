@@ -1,6 +1,7 @@
 import time
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
@@ -17,6 +18,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
+
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     cities = ['chicago', 'new york city', 'washington']
     while True:
@@ -27,6 +29,7 @@ def get_filters():
             continue
         else:
             break
+
     # get user input for month (all, january, february, ... , june)
     months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     while True:
@@ -37,6 +40,7 @@ def get_filters():
             continue
         else:
             break
+
     # get user input for day of week (all, monday, tuesday, ... sunday)
     days = ['all', 'monday', 'tuesday', 'wednesday',
             'thursday', 'friday', 'saturday', 'sunday']
@@ -82,7 +86,6 @@ def load_data(city, month, day):
     # filters by day of the week
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
-        #day = days.index(day) + 1
 
     return df
 
@@ -125,6 +128,7 @@ def station_stats(df):
     # display most commonly used end station
     most_used_end_station = df['End Station'].value_counts().index[0]
     print('The most common End Station is ', most_used_end_station)
+
     # display most frequent combination of start station and end station trip
     combination_stations = df.groupby(['Start Station', 'End Station']).count()
     print('Most Commonly used combination of start station and end station trip is: ',
@@ -161,6 +165,7 @@ def user_stats(df):
     # Display counts of user types
     user_types = df['User Type'].value_counts()
     print('User Types:\n', user_types)
+
     # Display counts of gender
     try:
         gender_types = df['Gender'].value_counts()
