@@ -86,7 +86,6 @@ def load_data(city, month, day):
     # filters by day of the week
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
-        #day = days.index(day) + 1
 
     return df
 
